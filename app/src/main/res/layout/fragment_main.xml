@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Two Vectors Addition"
         android:id="@+id/button2addition"
+        android:onClick="goToTwoVectorsAdditionScreen"
         android:layout_marginTop="80dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
