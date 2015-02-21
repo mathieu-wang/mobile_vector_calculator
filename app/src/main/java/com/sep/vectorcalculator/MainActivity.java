@@ -50,6 +50,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void goToTwoVectorsAdditionScreen(View view) {
         Intent intent = new Intent(MainActivity.this, TwoVectorsAdditionActivity.class);
         startActivity(intent);
