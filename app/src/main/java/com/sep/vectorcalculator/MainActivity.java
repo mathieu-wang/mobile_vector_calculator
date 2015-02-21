@@ -56,6 +56,21 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void goToThreeVectorsAdditionScreen(View view) {
+        Intent intent = new Intent(MainActivity.this, ThreeVectorsAdditionActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToScalarProductScreen(View view) {
+        Intent intent = new Intent(MainActivity.this, TwoVectorsAdditionActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToVectorProductScreen(View view) {
+        Intent intent = new Intent(MainActivity.this, TwoVectorsAdditionActivity.class);
+        startActivity(intent);
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */

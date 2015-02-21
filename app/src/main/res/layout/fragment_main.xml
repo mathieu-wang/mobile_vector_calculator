@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:text="Three Vectors Addition"
         android:id="@+id/button3addition"
+        android:onClick="goToThreeVectorsAdditionScreen"
         android:layout_below="@+id/button2addition"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp" />
@@ -31,6 +32,7 @@
         android:layout_height="wrap_content"
         android:text="Scalar Product"
         android:id="@+id/buttonscalar"
+        android:onClick="goToScalarProductScreen"
         android:layout_below="@+id/button3addition"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="56dp" />
@@ -40,6 +42,7 @@
         android:layout_height="wrap_content"
         android:text="Vector Product"
         android:id="@+id/buttonvector"
+        android:onClick="goToVectorProductScreen"
         android:layout_below="@+id/buttonscalar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="56dp" />
