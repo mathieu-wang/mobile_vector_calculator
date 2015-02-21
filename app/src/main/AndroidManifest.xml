@@ -20,6 +20,18 @@
             android:name=".TwoVectorsAdditionActivity"
             android:label="@string/title_activity_two_vectors_addition" >
         </activity>
+        <activity
+            android:name=".ThreeVectorsAdditionActivity"
+            android:label="@string/title_activity_three_vectors_addition" >
+        </activity>
+        <activity
+            android:name=".ScalarProductActivity"
+            android:label="@string/title_activity_scalar_product" >
+        </activity>
+        <activity
+            android:name=".VectorProductActivity"
+            android:label="@string/title_activity_vector_product" >
+        </activity>
     </application>
 
 </manifest>

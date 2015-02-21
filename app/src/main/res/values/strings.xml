@@ -5,5 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_two_vectors_addition">TwoVectorsAdditionActivity</string>
+    <string name="title_activity_three_vectors_addition">ThreeVectorsAdditionActivity</string>
+    <string name="title_activity_scalar_product">ScalarProductActivity</string>
+    <string name="title_activity_vector_product">VectorProductActivity</string>
 
 </resources>
