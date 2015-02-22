@@ -43,4 +43,9 @@ public class PolarVector {
         r.setY(y);
         return r;
     }
+
+    @Override
+    public String toString() {
+        return "(r: " + r + ", theta: " + theta + ")";
+    }
 }

@@ -48,4 +48,9 @@ public class CartesianVector {
     public double vectorProduct(CartesianVector v){
         return this.x * v.getY() - this.y * v.getX();
     }
+
+    @Override
+    public String toString() {
+        return "(x: " + x + ", y: " + y + ")";
+    }
 }
