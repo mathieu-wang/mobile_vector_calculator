@@ -38,7 +38,9 @@ public class PolarVector {
     public CartesianVector convertToCartesianVector() throws Exception {
         double x = r * Math.cos(Math.toRadians(theta));
         double y = r * Math.sin(Math.toRadians(theta));
-        CartesianVector r = new CartesianVector(x, y);
+        CartesianVector r = new CartesianVector();
+        r.setX(x);
+        r.setY(y);
         return r;
     }
 }
