@@ -1,5 +1,7 @@
 package com.sep.vectorcalculator;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by YK on 15-02-21.
  */
@@ -51,6 +53,7 @@ public class CartesianVector {
 
     @Override
     public String toString() {
-        return "(x: " + x + ", y: " + y + ")";
+        DecimalFormat df = new DecimalFormat("#.###");
+        return "(x: " + df.format(x) + ", y: " + df.format(y) + ")";
     }
 }

@@ -1,5 +1,7 @@
 package com.sep.vectorcalculator;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by YK on 15-02-21.
  */
@@ -46,6 +48,7 @@ public class PolarVector {
 
     @Override
     public String toString() {
-        return "(r: " + r + ", theta: " + theta + ")";
+        DecimalFormat df = new DecimalFormat("#.###");
+        return "(r: " + df.format(r) + ", theta: " + df.format(theta) + ")";
     }
 }

@@ -84,7 +84,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
         android:ems="10"
         android:id="@+id/twoaddition_editTextX1"
         android:layout_alignTop="@+id/twoaddition_textViewY1"
@@ -96,7 +96,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
         android:ems="10"
         android:id="@+id/twoaddition_editTextY1"
         android:layout_alignBottom="@+id/twoaddition_editTextX1"
@@ -108,7 +108,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
         android:ems="10"
         android:id="@+id/twoaddition_editTextX2"
         android:layout_alignTop="@+id/twoaddition_textViewX2"
@@ -120,7 +120,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
         android:ems="10"
         android:id="@+id/twoaddition_editTextY2"
         android:layout_alignTop="@+id/twoaddition_textViewY2"

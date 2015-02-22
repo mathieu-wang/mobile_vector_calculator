@@ -94,11 +94,24 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
         double y2 = Double.parseDouble(editTextY2.getText().toString());
 
         TextView textViewResult = (TextView)findViewById(R.id.twoadditionViewResult);
-        if (isCartesian) {
-            textViewResult.setText("CARTESIAN ADD");
-        } else {
-            textViewResult.setText("POLAR ADD");
+        String displayText = "";
+
+        try {
+            if (isCartesian) {
+                CartesianVector cVector1 = new CartesianVector(x1, y1);
+                CartesianVector cVector2 = new CartesianVector(x2, y2);
+                CartesianVector result = Calculator.addTwoCartesianVectors(cVector1, cVector2);
+                displayText = result.toString();
+            } else {
+                PolarVector cVector1 = new PolarVector(x1, y1);
+                PolarVector cVector2 = new PolarVector(x2, y2);
+                PolarVector result = Calculator.addTwoPolarVectors(cVector1, cVector2);
+                displayText = result.toString();
+            }
+        } catch (Exception e) {
+            displayText = e.getMessage();
         }
+        textViewResult.setText(displayText);
     }
 
     /**
