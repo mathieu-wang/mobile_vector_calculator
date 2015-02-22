@@ -52,26 +52,18 @@ public class CalculatorTest {
     public void testLargestValidTwoPolarVectorsAddition() throws Exception {
         PolarVector a = new PolarVector(10e12, 10e12);
         PolarVector b = new PolarVector(10e12, 10e12);
-        try{
-            PolarVector result = Calculator.addTwoPolarVectors(a, b);
-            Assert.assertEquals(2*10e12, result.getR(), PRECISION);
-            Assert.assertEquals(-80.000275, result.getTheta(), PRECISION);
-        } catch (Exception e){
-            Assert.assertEquals("Magnitude too large", e.getMessage());
-        }
+        PolarVector result = Calculator.addTwoPolarVectors(a, b);
+        Assert.assertEquals(2*10e12, result.getR(), PRECISION);
+        Assert.assertEquals(-80.000275, result.getTheta(), PRECISION);
     }
 
     @Test
     public void testSmallestValidTwoPolarVectorsAddition() throws Exception {
         PolarVector a = new PolarVector(10e12, -10e12);
         PolarVector b = new PolarVector(10e12, -10e12);
-        try {
-            PolarVector result = Calculator.addTwoPolarVectors(a, b);
-            Assert.assertEquals(2 * 10e12, result.getR(), PRECISION);
-            Assert.assertEquals(80.000275, result.getTheta(), PRECISION);
-        } catch (Exception e){
-        Assert.assertEquals("Magnitude too large", e.getMessage());
-        }
+        PolarVector result = Calculator.addTwoPolarVectors(a, b);
+        Assert.assertEquals(2 * 10e12, result.getR(), PRECISION);
+        Assert.assertEquals(80.000275, result.getTheta(), PRECISION);
     }
 
     @Test
@@ -119,13 +111,9 @@ public class CalculatorTest {
         PolarVector a = new PolarVector(10e12, 10e12);
         PolarVector b = new PolarVector(10e12, 10e12);
         PolarVector c = new PolarVector(10e12, 10e12);
-        try {
-            PolarVector result = Calculator.addThreePolarVectors(a, b, c);
-            Assert.assertEquals(3.0000000000000004E13, result.getR(), PRECISION);
-            Assert.assertEquals(-80.000275, result.getTheta(), PRECISION);
-        } catch (Exception e){
-            Assert.assertEquals("Magnitude too large", e.getMessage());
-        }
+        PolarVector result = Calculator.addThreePolarVectors(a, b, c);
+        Assert.assertEquals(3.0000000000000004E13, result.getR(), PRECISION);
+        Assert.assertEquals(-80.000275, result.getTheta(), PRECISION);
     }
 
     @Test
@@ -133,13 +121,9 @@ public class CalculatorTest {
         PolarVector a = new PolarVector(10e12, -10e12);
         PolarVector b = new PolarVector(10e12, -10e12);
         PolarVector c = new PolarVector(10e12, -10e12);
-        try{
-            PolarVector result = Calculator.addThreePolarVectors(a, b, c);
-            Assert.assertEquals(3.0000000000000004E13, result.getR(), PRECISION);
-            Assert.assertEquals(80.000275, result.getTheta(), PRECISION);
-        } catch (Exception e){
-            Assert.assertEquals("Magnitude too large", e.getMessage());
-        }
+        PolarVector result = Calculator.addThreePolarVectors(a, b, c);
+        Assert.assertEquals(3.0000000000000004E13, result.getR(), PRECISION);
+        Assert.assertEquals(80.000275, result.getTheta(), PRECISION);
     }
 
     @Test
