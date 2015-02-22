@@ -3,6 +3,7 @@ package com.sep.vectorcalculator;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -132,13 +133,41 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
         int w = canvas.getWidth();
         int h = canvas.getHeight();
         paint.setColor(Color.RED);
-//        surfaceView.setBackgroundColor(Color.WHITE);
-//        canvas.drawColor(Color.BLACK);
 
         surfaceView.draw(canvas);
-        canvas.drawLine(0, 0, w, h, paint);
-//        canvas.drawRGB(0, 255, 0);
+
+        //TODO: Normalize vector
+
+        drawArrow(canvas, paint, 100, 100, w-100, h-100);
+
         surfaceView.getHolder().unlockCanvasAndPost(canvas);
+    }
+
+    //drawArrow method inspired from http://stackoverflow.com/questions/11975636/how-to-draw-an-arrow-using-android-graphic-class
+    private void drawArrow(Canvas canvas, Paint paint, float x0, float y0, float x1, float y1) {
+        float deltaX = x1 - x0;
+        float deltaY = y1 - y0;
+        float frac = (float) 0.1;
+
+        float point_x_1 = x0 + (float) ((1 - frac) * deltaX + frac * deltaY);
+        float point_y_1 = y0 + (float) ((1 - frac) * deltaY - frac * deltaX);
+
+        float point_x_2 = x1;
+        float point_y_2 = y1;
+
+        float point_x_3 = x0 + (float) ((1 - frac) * deltaX - frac * deltaY);
+        float point_y_3 = y0 + (float) ((1 - frac) * deltaY + frac * deltaX);
+
+        Path path = new Path();
+
+        path.moveTo(point_x_1, point_y_1);
+        path.lineTo(point_x_2, point_y_2);
+        path.lineTo(point_x_3, point_y_3);
+        path.moveTo(point_x_2, point_y_2);
+        path.close();
+
+        canvas.drawLine(x0, y0, x1, y1, paint);
+        canvas.drawPath(path, paint);
     }
 
     /**
