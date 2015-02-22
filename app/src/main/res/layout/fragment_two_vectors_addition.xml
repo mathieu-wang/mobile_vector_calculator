@@ -45,6 +45,7 @@
         android:layout_height="wrap_content"
         android:text="Calculate"
         android:id="@+id/twoaddition_calculateButton"
+        android:onClick="twoadditionCalculate"
         android:layout_below="@+id/twoaddition_textViewX2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp" />
@@ -125,6 +126,15 @@
         android:layout_alignTop="@+id/twoaddition_textViewY2"
         android:layout_toRightOf="@+id/twoaddition_textViewY2"
         android:layout_toEndOf="@+id/twoaddition_textViewY2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/twoadditionViewResult"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/twoaddition_calculateButton"
+        android:layout_alignStart="@+id/twoaddition_calculateButton" />
 
 
 </RelativeLayout>

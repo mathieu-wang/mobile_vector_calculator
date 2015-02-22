@@ -10,9 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 
 public class TwoVectorsAdditionActivity extends ActionBarActivity {
+    boolean isCartesian = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,54 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        if (checked) {
+            TextView twoadditionX1 = (TextView)findViewById(R.id.twoaddition_textViewX1);
+            TextView twoadditionY1 = (TextView)findViewById(R.id.twoaddition_textViewY1);
+            TextView twoadditionX2 = (TextView)findViewById(R.id.twoaddition_textViewX2);
+            TextView twoadditionY2 = (TextView)findViewById(R.id.twoaddition_textViewY2);
+
+            // Check which radio button was clicked
+            switch(view.getId()) {
+                case R.id.radioButtonCartesian:
+                    isCartesian = true;
+                    twoadditionX1.setText("x1");
+                    twoadditionY1.setText("y1");
+                    twoadditionX2.setText("x2");
+                    twoadditionY2.setText("y2");
+                    break;
+                case R.id.radioButtonPolar:
+                    isCartesian = false;
+                    twoadditionX1.setText("r1");
+                    twoadditionY1.setText("theta1");
+                    twoadditionX2.setText("r2");
+                    twoadditionY2.setText("theta2");
+                    break;
+            }
+        }
+    }
+
+    public void twoadditionCalculate(View view) {
+        EditText editTextX1 = (EditText)findViewById(R.id.twoaddition_editTextX1);
+        EditText editTextY1 = (EditText)findViewById(R.id.twoaddition_editTextY1);
+        EditText editTextX2 = (EditText)findViewById(R.id.twoaddition_editTextX2);
+        EditText editTextY2 = (EditText)findViewById(R.id.twoaddition_editTextY2);
+        double x1 = Double.parseDouble(editTextX1.getText().toString());
+        double y1 = Double.parseDouble(editTextY1.getText().toString());
+        double x2 = Double.parseDouble(editTextX2.getText().toString());
+        double y2 = Double.parseDouble(editTextY2.getText().toString());
+
+        TextView textViewResult = (TextView)findViewById(R.id.twoadditionViewResult);
+        if (isCartesian) {
+            textViewResult.setText("CARTESIAN ADD");
+        } else {
+            textViewResult.setText("POLAR ADD");
+        }
     }
 
     /**
