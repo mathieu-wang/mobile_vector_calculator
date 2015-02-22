@@ -1,5 +1,8 @@
 package com.sep.vectorcalculator;
 
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -7,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
@@ -112,6 +116,29 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
             displayText = e.getMessage();
         }
         textViewResult.setText(displayText);
+
+        SurfaceView surfaceView = (SurfaceView)findViewById(R.id.twoaddition_surfaceView);
+        surfaceView.setWillNotDraw(false);
+        Canvas canvas = surfaceView.getHolder().lockCanvas();
+
+        float x1f = (float)x1;
+        float y1f = (float)y1;
+        float x2f = (float)x2;
+        float y2f = (float)y2;
+        Paint paint = new Paint();
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(5);
+
+        int w = canvas.getWidth();
+        int h = canvas.getHeight();
+        paint.setColor(Color.RED);
+//        surfaceView.setBackgroundColor(Color.WHITE);
+//        canvas.drawColor(Color.BLACK);
+
+        surfaceView.draw(canvas);
+        canvas.drawLine(0, 0, w, h, paint);
+//        canvas.drawRGB(0, 255, 0);
+        surfaceView.getHolder().unlockCanvasAndPost(canvas);
     }
 
     /**
