@@ -9,7 +9,9 @@ public class CartesianVector {
 
     public CartesianVector(){}
 
-    public CartesianVector(double x, double y){
+    public CartesianVector(double x, double y) throws Exception {
+        if(x > 10e12 || y > 10e12) throw new Exception("Input too large");
+        if(x < -10e12 || y < -10e12) throw new Exception("Input too small");
         this.x = x;
         this.y = y;
     }
@@ -30,7 +32,7 @@ public class CartesianVector {
         this.y = y;
     }
 
-    public PolarVector convertToPolarVector(){
+    public PolarVector convertToPolarVector() throws Exception {
         double r = Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
         double theta = Math.toDegrees(Math.atan(this.y / this.x));
         PolarVector polarVector = new PolarVector(r, theta);
