@@ -107,39 +107,54 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
                 CartesianVector cVector2 = new CartesianVector(x2, y2);
                 CartesianVector result = Calculator.addTwoCartesianVectors(cVector1, cVector2);
                 displayText = result.toString();
+                drawVector(result);
             } else {
                 PolarVector cVector1 = new PolarVector(x1, y1);
                 PolarVector cVector2 = new PolarVector(x2, y2);
                 PolarVector result = Calculator.addTwoPolarVectors(cVector1, cVector2);
                 displayText = result.toString();
+                drawVector(result);
             }
         } catch (Exception e) {
             displayText = e.getMessage();
         }
         textViewResult.setText(displayText);
+    }
 
+    private void drawVector(CartesianVector vector) throws Exception {
+        drawVector(vector.convertToPolarVector());
+    }
+
+    private void drawVector(PolarVector vector) throws Exception {
         SurfaceView surfaceView = (SurfaceView)findViewById(R.id.twoaddition_surfaceView);
         surfaceView.setWillNotDraw(false);
         Canvas canvas = surfaceView.getHolder().lockCanvas();
 
-        float x1f = (float)x1;
-        float y1f = (float)y1;
-        float x2f = (float)x2;
-        float y2f = (float)y2;
+        int w = canvas.getWidth();
+        int h = canvas.getHeight();
+
+        float centerX = w/2;
+        float centerY = h/2;
+
+        float magnitude = centerY*3/4;
+        double angleInRad = Math.toRadians(vector.getTheta());
+        float normalizedX = centerX + magnitude * (float)Math.cos(angleInRad);
+        float normalizedY = centerY - magnitude * (float)Math.sin(angleInRad); //y-axis of Canvas starts at top, so need to substract from center y
+
+
+        float x1f = centerX;
+        float y1f = centerY;
+        float x2f = normalizedX;
+        float y2f = normalizedY;
+
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(5);
 
-        int w = canvas.getWidth();
-        int h = canvas.getHeight();
+
         paint.setColor(Color.RED);
-
         surfaceView.draw(canvas);
-
-        //TODO: Normalize vector
-
-        drawArrow(canvas, paint, 100, 100, w-100, h-100);
-
+        drawArrow(canvas, paint, x1f, y1f, x2f, y2f);
         surfaceView.getHolder().unlockCanvasAndPost(canvas);
     }
 
