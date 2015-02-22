@@ -141,7 +141,6 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
         float normalizedX = centerX + magnitude * (float)Math.cos(angleInRad);
         float normalizedY = centerY - magnitude * (float)Math.sin(angleInRad); //y-axis of Canvas starts at top, so need to substract from center y
 
-
         float x1f = centerX;
         float y1f = centerY;
         float x2f = normalizedX;
@@ -150,8 +149,6 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(5);
-
-
         paint.setColor(Color.RED);
         surfaceView.draw(canvas);
         drawArrow(canvas, paint, x1f, y1f, x2f, y2f);

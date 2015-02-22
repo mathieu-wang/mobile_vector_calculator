@@ -36,7 +36,7 @@ public class CartesianVector {
 
     public PolarVector convertToPolarVector() throws Exception {
         double r = Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
-        double theta = Math.toDegrees(Math.atan(this.y / this.x));
+        double theta = Math.toDegrees(Math.atan2(this.y, this.x));
         PolarVector polarVector = new PolarVector();
         polarVector.setR(r);
         polarVector.setTheta(theta);
