@@ -31,8 +31,8 @@ public class PolarVector {
     }
 
     public CartesianVector convertToCartesianVector(){
-        double x = r * Math.cos(theta);
-        double y = r * Math.sin(theta);
+        double x = r * Math.cos(Math.toRadians(theta));
+        double y = r * Math.sin(Math.toRadians(theta));
         CartesianVector r = new CartesianVector(x, y);
         return r;
     }
