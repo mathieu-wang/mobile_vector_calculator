@@ -17,7 +17,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="70dp"
-            android:layout_marginStart="70dp" />
+            android:layout_marginStart="70dp"
+            android:checked="true" />
 
         <RadioButton
             android:layout_width="wrap_content"

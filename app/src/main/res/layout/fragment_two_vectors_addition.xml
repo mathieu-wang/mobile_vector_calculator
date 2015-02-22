@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Vector 1"
-        android:id="@+id/textView"
+        android:id="@+id/threeaddition_textViewV1"
         android:layout_alignTop="@+id/include"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -24,28 +24,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="y"
-        android:id="@+id/textView3"
-        android:layout_alignTop="@+id/textView4"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button" />
+        android:text="y1"
+        android:id="@+id/threeaddition_textViewY1"
+        android:layout_alignTop="@+id/threeaddition_textViewX1"
+        android:layout_toRightOf="@+id/threeaddition_calculateButton"
+        android:layout_toEndOf="@+id/threeaddition_calculateButton" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="x"
-        android:id="@+id/textView4"
-        android:layout_alignTop="@+id/textView"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_toStartOf="@+id/button" />
+        android:text="x1"
+        android:id="@+id/threeaddition_textViewX1"
+        android:layout_alignTop="@+id/threeaddition_textViewV1"
+        android:layout_toLeftOf="@+id/threeaddition_calculateButton"
+        android:layout_toStartOf="@+id/threeaddition_calculateButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_below="@+id/textView5"
+        android:text="Calculate"
+        android:id="@+id/threeaddition_calculateButton"
+        android:layout_below="@+id/threeaddition_textViewX2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp" />
 
@@ -54,9 +54,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Vector 2"
-        android:id="@+id/textView2"
+        android:id="@+id/threeaddition_textViewV2"
         android:layout_marginTop="22dp"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/threeaddition_textViewV1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -64,67 +64,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="x"
-        android:id="@+id/textView5"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4" />
+        android:text="x2"
+        android:id="@+id/threeaddition_textViewX2"
+        android:layout_alignTop="@+id/threeaddition_textViewV2"
+        android:layout_alignLeft="@+id/threeaddition_textViewX1"
+        android:layout_alignStart="@+id/threeaddition_textViewX1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="y"
-        android:id="@+id/textView6"
-        android:layout_alignTop="@+id/textView5"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button" />
+        android:text="y2"
+        android:id="@+id/threeaddition_textViewY2"
+        android:layout_alignTop="@+id/threeaddition_textViewX2"
+        android:layout_toRightOf="@+id/threeaddition_calculateButton"
+        android:layout_toEndOf="@+id/threeaddition_calculateButton" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
+        android:id="@+id/threeaddition_editTextX1"
+        android:layout_alignTop="@+id/threeaddition_textViewY1"
+        android:layout_alignRight="@+id/threeaddition_calculateButton"
+        android:layout_alignEnd="@+id/threeaddition_calculateButton"
+        android:layout_alignLeft="@+id/threeaddition_calculateButton"
+        android:layout_alignStart="@+id/threeaddition_calculateButton" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_alignBottom="@+id/editText"
+        android:id="@+id/twoaddition_editTextY1"
+        android:layout_alignBottom="@+id/threeaddition_editTextX1"
         android:layout_alignRight="@+id/include"
         android:layout_alignEnd="@+id/include"
-        android:layout_toRightOf="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3" />
+        android:layout_toRightOf="@+id/threeaddition_textViewY1"
+        android:layout_toEndOf="@+id/threeaddition_textViewY1" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_alignTop="@+id/textView5"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:id="@+id/threeaddition_editTextX2"
+        android:layout_alignTop="@+id/threeaddition_textViewX2"
+        android:layout_alignRight="@+id/threeaddition_editTextX1"
+        android:layout_alignEnd="@+id/threeaddition_editTextX1"
+        android:layout_alignLeft="@+id/threeaddition_editTextX1"
+        android:layout_alignStart="@+id/threeaddition_editTextX1" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText4"
-        android:layout_alignTop="@+id/textView6"
-        android:layout_toRightOf="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6" />
+        android:id="@+id/threeaddition_editTextY2"
+        android:layout_alignTop="@+id/threeaddition_textViewY2"
+        android:layout_toRightOf="@+id/threeaddition_textViewY2"
+        android:layout_toEndOf="@+id/threeaddition_textViewY2" />
 
 
 </RelativeLayout>
