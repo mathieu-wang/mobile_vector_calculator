@@ -59,12 +59,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void goToScalarProductScreen(View view) {
-        Intent intent = new Intent(MainActivity.this, TwoVectorsAdditionActivity.class);
+        Intent intent = new Intent(MainActivity.this, ScalarProductActivity.class);
         startActivity(intent);
     }
 
     public void goToVectorProductScreen(View view) {
-        Intent intent = new Intent(MainActivity.this, TwoVectorsAdditionActivity.class);
+        Intent intent = new Intent(MainActivity.this, VectorProductActivity.class);
         startActivity(intent);
     }
 

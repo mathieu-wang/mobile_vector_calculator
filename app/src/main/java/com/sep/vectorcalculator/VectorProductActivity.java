@@ -10,10 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 
 public class VectorProductActivity extends ActionBarActivity {
-
+    boolean isCartesian = true;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,36 @@ public class VectorProductActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        if (checked) {
+            TextView vectorX1 = (TextView)findViewById(R.id.vector_textViewX1);
+            TextView vectorY1 = (TextView)findViewById(R.id.vector_textViewY1);
+            TextView vectorX2 = (TextView)findViewById(R.id.vector_textViewX2);
+            TextView vectorY2 = (TextView)findViewById(R.id.vector_textViewY2);
+
+            // Check which radio button was clicked
+            switch(view.getId()) {
+                case R.id.radioButtonCartesian:
+                    isCartesian = true;
+                    vectorX1.setText("x1");
+                    vectorY1.setText("y1");
+                    vectorX2.setText("x2");
+                    vectorY2.setText("y2");
+                    break;
+                case R.id.radioButtonPolar:
+                    isCartesian = false;
+                    vectorX1.setText("r1");
+                    vectorY1.setText("theta1");
+                    vectorX2.setText("r2");
+                    vectorY2.setText("theta2");
+                    break;
+            }
+        }
+    }
+    
     /**
      * A placeholder fragment containing a simple view.
      */

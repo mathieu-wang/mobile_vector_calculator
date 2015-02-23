@@ -10,9 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 
 public class ThreeVectorsAdditionActivity extends ActionBarActivity {
+    boolean isCartesian = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,42 @@ public class ThreeVectorsAdditionActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        if (checked) {
+            TextView threeadditionX1 = (TextView)findViewById(R.id.threeaddition_textViewX1);
+            TextView threeadditionY1 = (TextView)findViewById(R.id.threeaddition_textViewY1);
+            TextView threeadditionX2 = (TextView)findViewById(R.id.threeaddition_textViewX2);
+            TextView threeadditionY2 = (TextView)findViewById(R.id.threeaddition_textViewY2);
+            TextView threeadditionX3 = (TextView)findViewById(R.id.threeaddition_textViewX3);
+            TextView threeadditionY3 = (TextView)findViewById(R.id.threeaddition_textViewY3);
+
+            // Check which radio button was clicked
+            switch(view.getId()) {
+                case R.id.radioButtonCartesian:
+                    isCartesian = true;
+                    threeadditionX1.setText("x1");
+                    threeadditionY1.setText("y1");
+                    threeadditionX2.setText("x2");
+                    threeadditionY2.setText("y2");
+                    threeadditionX3.setText("x3");
+                    threeadditionY3.setText("y3");
+                    break;
+                case R.id.radioButtonPolar:
+                    isCartesian = false;
+                    threeadditionX1.setText("r1");
+                    threeadditionY1.setText("theta1");
+                    threeadditionX2.setText("r2");
+                    threeadditionY2.setText("theta2");
+                    threeadditionX3.setText("r3");
+                    threeadditionY3.setText("theta3");
+                    break;
+            }
+        }
     }
 
     /**

@@ -8,4 +8,133 @@
 
     <include layout="@layout/coordinates_fragment"/>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Vector 1"
+        android:id="@+id/vector_textViewV1"
+        android:layout_alignTop="@+id/include"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="96dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="y1"
+        android:id="@+id/vector_textViewY1"
+        android:layout_alignTop="@+id/vector_textViewX1"
+        android:layout_toRightOf="@+id/vector_calculateButton"
+        android:layout_toEndOf="@+id/vector_calculateButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="x1"
+        android:id="@+id/vector_textViewX1"
+        android:layout_alignTop="@+id/vector_textViewV1"
+        android:layout_toLeftOf="@+id/vector_calculateButton"
+        android:layout_toStartOf="@+id/vector_calculateButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/vector_calculateButton"
+        android:onClick="vectorCalculate"
+        android:layout_below="@+id/vector_textViewX2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Vector 2"
+        android:id="@+id/vector_textViewV2"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/vector_textViewV1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="x2"
+        android:id="@+id/vector_textViewX2"
+        android:layout_alignTop="@+id/vector_textViewV2"
+        android:layout_alignLeft="@+id/vector_textViewX1"
+        android:layout_alignStart="@+id/vector_textViewX1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="y2"
+        android:id="@+id/vector_textViewY2"
+        android:layout_alignTop="@+id/vector_textViewX2"
+        android:layout_toRightOf="@+id/vector_calculateButton"
+        android:layout_toEndOf="@+id/vector_calculateButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/vector_editTextX1"
+        android:layout_alignTop="@+id/vector_textViewY1"
+        android:layout_alignRight="@+id/vector_calculateButton"
+        android:layout_alignEnd="@+id/vector_calculateButton"
+        android:layout_alignLeft="@+id/vector_calculateButton"
+        android:layout_alignStart="@+id/vector_calculateButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/vector_editTextY1"
+        android:layout_alignBottom="@+id/vector_editTextX1"
+        android:layout_alignRight="@+id/include"
+        android:layout_alignEnd="@+id/include"
+        android:layout_toRightOf="@+id/vector_textViewY1"
+        android:layout_toEndOf="@+id/vector_textViewY1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/vector_editTextX2"
+        android:layout_alignTop="@+id/vector_textViewX2"
+        android:layout_alignRight="@+id/vector_editTextX1"
+        android:layout_alignEnd="@+id/vector_editTextX1"
+        android:layout_alignLeft="@+id/vector_editTextX1"
+        android:layout_alignStart="@+id/vector_editTextX1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/vector_editTextY2"
+        android:layout_alignTop="@+id/vector_textViewY2"
+        android:layout_toRightOf="@+id/vector_textViewY2"
+        android:layout_toEndOf="@+id/vector_textViewY2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/vectorViewResult"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

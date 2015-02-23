@@ -8,4 +8,133 @@
 
     <include layout="@layout/coordinates_fragment"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Vector 1"
+        android:id="@+id/scalar_textViewV1"
+        android:layout_alignTop="@+id/include"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="96dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="y1"
+        android:id="@+id/scalar_textViewY1"
+        android:layout_alignTop="@+id/scalar_textViewX1"
+        android:layout_toRightOf="@+id/scalar_calculateButton"
+        android:layout_toEndOf="@+id/scalar_calculateButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="x1"
+        android:id="@+id/scalar_textViewX1"
+        android:layout_alignTop="@+id/scalar_textViewV1"
+        android:layout_toLeftOf="@+id/scalar_calculateButton"
+        android:layout_toStartOf="@+id/scalar_calculateButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/scalar_calculateButton"
+        android:onClick="scalarCalculate"
+        android:layout_below="@+id/scalar_textViewX2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Vector 2"
+        android:id="@+id/scalar_textViewV2"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/scalar_textViewV1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="x2"
+        android:id="@+id/scalar_textViewX2"
+        android:layout_alignTop="@+id/scalar_textViewV2"
+        android:layout_alignLeft="@+id/scalar_textViewX1"
+        android:layout_alignStart="@+id/scalar_textViewX1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="y2"
+        android:id="@+id/scalar_textViewY2"
+        android:layout_alignTop="@+id/scalar_textViewX2"
+        android:layout_toRightOf="@+id/scalar_calculateButton"
+        android:layout_toEndOf="@+id/scalar_calculateButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/scalar_editTextX1"
+        android:layout_alignTop="@+id/scalar_textViewY1"
+        android:layout_alignRight="@+id/scalar_calculateButton"
+        android:layout_alignEnd="@+id/scalar_calculateButton"
+        android:layout_alignLeft="@+id/scalar_calculateButton"
+        android:layout_alignStart="@+id/scalar_calculateButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/scalar_editTextY1"
+        android:layout_alignBottom="@+id/scalar_editTextX1"
+        android:layout_alignRight="@+id/include"
+        android:layout_alignEnd="@+id/include"
+        android:layout_toRightOf="@+id/scalar_textViewY1"
+        android:layout_toEndOf="@+id/scalar_textViewY1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/scalar_editTextX2"
+        android:layout_alignTop="@+id/scalar_textViewX2"
+        android:layout_alignRight="@+id/scalar_editTextX1"
+        android:layout_alignEnd="@+id/scalar_editTextX1"
+        android:layout_alignLeft="@+id/scalar_editTextX1"
+        android:layout_alignStart="@+id/scalar_editTextX1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|numberSigned"
+        android:ems="10"
+        android:id="@+id/scalar_editTextY2"
+        android:layout_alignTop="@+id/scalar_textViewY2"
+        android:layout_toRightOf="@+id/scalar_textViewY2"
+        android:layout_toEndOf="@+id/scalar_textViewY2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/scalarViewResult"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
