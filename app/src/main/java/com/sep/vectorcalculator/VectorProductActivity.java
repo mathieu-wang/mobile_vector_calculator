@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -80,6 +81,40 @@ public class VectorProductActivity extends ActionBarActivity {
                     break;
             }
         }
+    }
+
+    public void vectorCalculate(View view) {
+        EditText editTextX1 = (EditText)findViewById(R.id.vector_editTextX1);
+        EditText editTextY1 = (EditText)findViewById(R.id.vector_editTextY1);
+        EditText editTextX2 = (EditText)findViewById(R.id.vector_editTextX2);
+        EditText editTextY2 = (EditText)findViewById(R.id.vector_editTextY2);
+
+        TextView textViewResult = (TextView)findViewById(R.id.vectorViewResult);
+        String displayText = "";
+
+        try {
+            double x1 = Double.parseDouble(editTextX1.getText().toString());
+            double y1 = Double.parseDouble(editTextY1.getText().toString());
+            double x2 = Double.parseDouble(editTextX2.getText().toString());
+            double y2 = Double.parseDouble(editTextY2.getText().toString());
+
+            if (isCartesian) {
+                CartesianVector cVector1 = new CartesianVector(x1, y1);
+                CartesianVector cVector2 = new CartesianVector(x2, y2);
+                double result = Calculator.cartesianVectorsVectorProduct(cVector1, cVector2);
+                displayText = String.valueOf(result);
+            } else {
+                PolarVector cVector1 = new PolarVector(x1, y1);
+                PolarVector cVector2 = new PolarVector(x2, y2);
+                double result = Calculator.polarVectorsVectorProduct(cVector1, cVector2);
+                displayText = String.valueOf(result);
+            }
+        } catch (NumberFormatException nfe) {
+            displayText = "Please do not leave vector components empty";
+        } catch (Exception e) {
+            displayText = e.getMessage();
+        }
+        textViewResult.setText(displayText);
     }
     
     /**
