@@ -93,15 +93,16 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
         EditText editTextY1 = (EditText)findViewById(R.id.twoaddition_editTextY1);
         EditText editTextX2 = (EditText)findViewById(R.id.twoaddition_editTextX2);
         EditText editTextY2 = (EditText)findViewById(R.id.twoaddition_editTextY2);
-        double x1 = Double.parseDouble(editTextX1.getText().toString());
-        double y1 = Double.parseDouble(editTextY1.getText().toString());
-        double x2 = Double.parseDouble(editTextX2.getText().toString());
-        double y2 = Double.parseDouble(editTextY2.getText().toString());
 
         TextView textViewResult = (TextView)findViewById(R.id.twoadditionViewResult);
         String displayText = "";
 
         try {
+            double x1 = Double.parseDouble(editTextX1.getText().toString());
+            double y1 = Double.parseDouble(editTextY1.getText().toString());
+            double x2 = Double.parseDouble(editTextX2.getText().toString());
+            double y2 = Double.parseDouble(editTextY2.getText().toString());
+
             if (isCartesian) {
                 CartesianVector cVector1 = new CartesianVector(x1, y1);
                 CartesianVector cVector2 = new CartesianVector(x2, y2);
@@ -115,6 +116,8 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
                 displayText = result.toString();
                 drawVector(result);
             }
+        } catch (NumberFormatException nfe) {
+            displayText = "Please do not leave vector components empty";
         } catch (Exception e) {
             displayText = e.getMessage();
         }
@@ -139,7 +142,7 @@ public class TwoVectorsAdditionActivity extends ActionBarActivity {
         float magnitude = centerY*3/4;
         double angleInRad = Math.toRadians(vector.getTheta());
         float normalizedX = centerX + magnitude * (float)Math.cos(angleInRad);
-        float normalizedY = centerY - magnitude * (float)Math.sin(angleInRad); //y-axis of Canvas starts at top, so need to substract from center y
+        float normalizedY = centerY - magnitude * (float)Math.sin(angleInRad); //y-axis of Canvas starts at top, so need to subtract from center y
 
         float x1f = centerX;
         float y1f = centerY;
