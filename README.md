@@ -8,3 +8,5 @@ An Android app that calculates and displays results for:
 
 The vectors are in 2D, and can be specified in either Cartesian or polar coordinates.
 For the addition operations, a visual representation of the resulting vector is also displayed.
+
+![add two vectors](screenshots/addTwoVectors.png)
